@@ -1,6 +1,0 @@
-<xml>
-<name>Nikita</name>
-<age>23</age>
-<city>Chelyabinsk</city>
-<from>Russia</from>
-test 123
