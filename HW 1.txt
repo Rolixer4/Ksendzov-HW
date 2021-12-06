@@ -1,0 +1,38 @@
+1) Посмотреть где я: pwd
+2) Создать папку: mkdir FolderName
+3) Зайти в папку: cd FolderName
+4) Создать 3 папки: mkdir Folder_1 Folder_2 Folder_3
+5) Зайти в любую папку: cd E:\Git
+6) Создать 5 файлов (3 txt, 2 json): touch 1.txt 2.txt 3.txt test_1.json test_2.json
+7) Создать 3 папки: mkdir folder_{1..3}
+8. Вывести список содержимого папки: ls; ls –la; ls -a
+9) + Открыть любой txt файл: vim file.txt
+10) + написать туда что-нибудь, любой текст: INSERT + любой текст
+11) + сохранить и выйти: ESC :wq
+12) Выйти из папки на уровень выше: cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку: mv test.txt test_2.txt autofolder1; mv test.txt test_1.txt /C/group_25/FolderName
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку: cp test.txt test2.txt autofolder1; cp test.txt test2.txt  /C/group_25/FolderName/Folder_1
+15) Найти файл по имени: find –name “test_1.json”
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает: grep “research” test.txt; grep –r “test” /c/group_25/; По вопросу: tail –f file.txt
+17) вывести несколько первых строк из текстового файла: head –n4 test.txt
+18) вывести несколько последних строк из текстового файла: tail –n4 test.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает: less –s bigtextfile.txt
+20) вывести дату и время: date
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+Ответ: curl http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+(Используется метод GET)
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13:
+Создаём файл с любым названием и заходим в него через vim
+
+#!/bin/bash
+cd C:\group_25
+mkdir script_{1..3}
+cd script_1
+touch script_1.txt script_2.txt script_3.txt script.json script1.json
+mkdir ScriptFolder_{1..3}
+ls -la
+mv script_1.txt script_2.txt ScriptFolder_1
+После – сделать файл исполняемым chmod +x ./bash
+
