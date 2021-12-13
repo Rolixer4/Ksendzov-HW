@@ -1,0 +1,38 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+} git branch "название ветки"
+
+2. Запушить все ветки на внешний репозиторий: git push origin --all
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта: git checkout Bug_reports; touch bug_report_strucrure.txt
+Summary Короткое описание проблемы, явно указывающее на причину и тип ошибочной ситуации.
+Project Название тестируемого проекта
+Component Название части или функции тестируемого продукта
+Version Версия на которой была найдена ошибка
+Severity:
+S1 Блокирующий (Blocker)
+S2 Критический (Critical)
+S3 Значительный (Major)
+S4 Незначительный (Minor)
+S5 Тривиальный (Trivial)
+Priority:
+P1 Высокий (High)
+P2 Средний (Medium)
+P3 Низкий (Low)
+Status Статус бага. Зависит от используемой процедуры и жизненного цикла бага (bug workflow and life cycle)
+Steps to Reproduce Шаги, по которым можно легко воспроизвести ситуацию, приведшую к ошибке.
+Actual Result Результат, полученный после прохождения шагов к воспроизведению
+Expected Result	Ожидаемый правильный результат
+Attachment Файл с логами, скриншот или любой другой документ, который может помочь прояснить причину ошибки или указать на способ решения проблемы
+4. Запушить структуру багрепорта на внешний репозиторий: git add .; git commit -m "коммент"; git push
+5. Вмержить ветку Bag Reports в Main: git checkout main; git merge Bug_Reports
+6. Запушить main на внешний репозиторий: git push
+7. В ветке CheckLists набросать структуру чек листа: git checkout CheckLists; touch CheckLists.txt
+8. Запушить структуру на внешний репозиторий: git add .; git commit -m "commit"; git push
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main: commit Pull Request (сверху будет в какую и из какой ветки мержим); Create Pull Request; Merge Pull Request
+10. Синхронизировать Внешнюю и Локальную ветки Main: git checkout main; git pull
