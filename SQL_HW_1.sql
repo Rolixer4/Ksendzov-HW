@@ -5,19 +5,19 @@ select * from students;
 select * from students; 
 
 -- 3. ¬ывести только Id пользователей.
-select "id" from students;
+select id from students;
 
 -- 4. ¬ывести только им€ пользователей.
-select "name" from students;  
+select name from students;  
 
 -- 5. ¬ывести только email пользователей.
-select "email" from students; 
+select email from students; 
 
 -- 6. ¬ывести им€ и email пользователей.
-select "name", "email" from students; 
+select name, email from students; 
 
 -- 7. ¬ывести id, им€, email и дату создани€ пользователей.
-select "id", name, "email", "created_on" from students; 
+select id, name, email, created_on from students; 
 
 -- 8. ¬ывести пользователей где password 12333.
 select * from students 
@@ -57,47 +57,47 @@ where created_on='2021-07-12 00:00:00' and name like'%8%'
 
 --  17. ¬ывести пользовател€ у которых id равен 110.
 select * from students
-where id='110';
+where id=110;
 
 --   18. ¬ывести пользовател€ у которых id равен 153.
 select * from students
-where id='153';
+where id=153;
 
 -- 19. ¬ывести пользовател€ у которых id больше 140.
 select * from students
-where id>'140';
+where id>140;
 
 -- 20. ¬ывести пользовател€ у которых id меньше 130.
 select * from students
-where id<'130';
+where id<130;
 
 -- 21. ¬ывести пользовател€ у которых id меньше 127 или больше 188.
 select * from students
-where id<'127' or id>'188';
+where id<127 or id>188;
 
 -- 22. ¬ывести пользовател€ у которых id меньше либо равно 137.
 select * from students
-where id<='137';
+where id<=137;
 
 -- 23. ¬ывести пользовател€ у которых id больше либо равно 137.
 select * from students
-where id>='137';
+where id>=137;
 
 -- 24. ¬ывести пользовател€ у которых id больше 180 но меньше 190.
 select * from students
-where id>'180' and id<'190';
+where id> 180 and id< 190;
 
 -- 25. ¬ывести пользовател€ у которых id между 180 и 190.
 select * from students
-where id between'180' and '190';
+where id between 180 and 190;
 
 -- 26. ¬ывести пользователей где password равен 12333, 1m313, 123313.
 select * from students
-where password='12333' or password='1m313' or password='123313';
+where password in('12333', '1m313', '123313');
 
 --  27. ¬ывести пользователей где created_on равен 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00.
 select * from students
-where created_on='2020-10-03 00:00:00' or created_on='2021-05-19 00:00:00' or created_on='2021-03-26 00:00:00';
+where created_on in('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');
 
 --  28. ¬ывести минимальный id.
 select min(id) from students;
