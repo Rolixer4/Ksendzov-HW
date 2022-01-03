@@ -1,258 +1,3 @@
--- HW 2 START
-create table salary(
-	id serial primary key,
-	monthly_salary int not null
-);
-
-select * from salary;
-
-create table roles(
-	id serial primary key,
-	role_title varchar(30) unique not null
-);
-
-select * from roles;
-
-create table salary_roles(
-	id serial primary key,
-	id_role int unique not null,
-	id_salary int not null,
-	foreign key (id_role)
-		references roles(id),
-	foreign key (id_salary)
-		references salary(id)
-);
-
-select * from salary_roles;
-
-insert into salary(monthly_salary)
-	values (1000), 
-		   (1100),
-		   (1200),
-		   (1300),
-		   (1400),
-		   (1500),
-		   (1600),
-		   (1700),
-		   (1800),
-		   (1900),
-		   (2000),
-		   (2100),
-		   (2200),
-		   (2300),
-		   (2400),
-		   (2500);
-		  
-
-insert into roles(role_title)
-	values ('QA_manual_junior'), 
-		   ('QA_manual_middle'),
-		   ('QA_manual_senior'),
-		   ('QA_automation_junior'),
-		   ('QA_automation_middle'),
-		   ('QA_automation_senior'),
-		   ('Developer_java_junior'),
-		   ('Developer_java_middle'),
-		   ('Developer_java_senior'),
-		   ('Developer_python_junior'),
-		   ('Developer_python_middle'),
-		   ('Developer_python_senior'),
-		   ('HR'),
-		   ('Designer'),
-		   ('Sales Manager'),
-		   ('Project Manager'),
-		   ('CEO'),
-		   ('Manager');
-
-insert into salary_roles(id_role, id_salary)
-	values (1, 1), 
-		   (2, 4),
-		   (3, 4),
-		   (4, 4),
-		   (5, 2),
-		   (6, 3),
-		   (7, 5),
-		   (8, 4),
-		   (9, 2),
-		   (10, 3),
-		   (11, 6),
-		   (12, 4),
-		   (13, 3),
-		   (14, 1),
-		   (15, 9);
-		  
---удалить таблицу drop table salary_roles;
-		  
-
-insert into salary_roles(id_role, id_salary)
-	values (16,32);
-
-alter table salary_roles
-	add column devices varchar(50);
-
-alter table roles
-	drop column taxi;
-
-delete from salary_roles
-	where id=4;
-
-update salary_roles 
-	set id=4
-	where id=7;
-
-alter table roles
-	add column parking int;
-
-alter table roles
-	rename column parking to taxi;
-
-alter table roles
-	alter column taxi type varchar(40) using taxi::varchar(30);
-
-alter table roles
-	alter column taxi type int using taxi::integer;
-
-create table employees(
-	id serial primary key,
-	employee_name varchar(50) not null
-);
-
-select * from employees;
-
-insert into employees(employee_name)
-	values ('Nikita_S'),
-		   ('Irina_T'),
-		   ('Mark_V'),
-		   ('Nadin_H'),
-		   ('Ekaterina_T'),
-		   ('Vasiliy_B'),
-		   ('Egor_K'),
-		   ('Maks_K'),
-		   ('Alex_S'),
-		   ('Elisabeth_O'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S'),
-		   ('Nikita_S');
-		  
-create table employee_salary(
-	id serial primary key,
-	employee_id int unique not null,
-	salary_id int not null
-);
-
-insert into employee_salary(employee_id, salary_id)
-	values (16334, 18);
-		  
-create table roles_employee(
-	id serial primary key,
-	employee_id int unique not null,
-	role_id int not null,
-	foreign key(employee_id)
-		references employees(id),
-	foreign key (role_id)
-		references roles(id)
-);
-
-
-insert into roles_employee(employee_id, role_id)
-	values (1, 3),
-		   (2, 1),
-		   (3, 5),
-		   (4, 8),
-		   (5, 1),
-		   (6, 12),
-		   (7, 13),
-		   (8, 11),
-		   (9, 2),
-		   (10, 4),
-		   (11, 11),
-		   (12, 14),
-		   (13, 13),
-		   (14, 11),
-		   (15, 2),
-		   (16, 5),
-		   (17, 8),
-		   (18, 12),
-		   (19, 15),
-		   (20, 11),
-		   (21, 2),
-		   (22, 1),
-		   (23, 7),
-		   (24, 9),
-		   (25, 10),
-		   (26, 12),
-		   (27, 1),
-		   (28, 2),
-		   (29, 4),
-		   (30, 6),
-		   (31, 10),
-		   (32, 12),
-		   (33, 14),
-		   (34, 11),
-		   (35, 2),
-		   (36, 1),
-		   (37, 3),
-		   (38, 5),
-		   (39, 2),
-		   (40, 10);
-select * from employee_salary;
 		  
 -- HW 3 START		  
 
@@ -476,5 +221,190 @@ select employee_name, role_title, monthly_salary from roles_employee re
 	where monthly_salary in (1100, 1500, 2000)
 	order by monthly_salary;
 
+-- «јЌя“»≈ 4
 
-	
+create table factories(
+ id serial primary key,
+ factory_title varchar(50)
+);
+
+insert into factories(factory_title)
+values ('Hanwai'),
+    ('Kenling'),
+    ('Dongguan'),
+    ('Abis'),
+    ('Foxconn');
+   
+select * from factories;
+
+create table mobile_phones(
+ id serial primary key,
+ brand_id int,
+ product_model varchar(40),
+ price int,
+ factory_id int
+);
+
+insert into mobile_phones(brand_id, product_model, price, factory_id)
+values (2, 'iphone_X', 600, 5),
+    (2, 'iphone_11', 700, 4),
+    (1, 'A51', 400, 1),
+    (3, 'P40', 600, 5),
+    (1, 's21', 1500, 5),
+    (3, 'H200', 300, 3),
+    (2, 'iphone_12', 1000, 5),
+    (3, 'Q15', 400, 2),
+    (1, 'P50', 900, 1),
+    (2, 'iphone_13', 1800, 4),
+    (1, 'S22', 1300, 3),
+    (1, 'A31', 200, 5);
+   
+ create table monitors(
+	 id serial primary key,
+	 brand_id int,
+	 product_model varchar(40),
+	 price int,
+	 factory_id int
+	);
+insert into monitors(brand_id, product_model, price, factory_id)
+values (2, 'P300', 100, 1),
+    (2, 'A320', 200, 3),
+    (1, 'NV1000_Ultra', 450, 5),
+    (3, 'P400_super_Amolet', 240, 3),
+    (1, 'AV_1000', 400, 4),
+    (3, 'UKV_100', 900, 2),
+    (2, 'KV-200', 2000, 2),
+    (3, 'IPS_1980', 550, 1),
+    (1, 'IPS_4k', 630, 4),
+    (2, 'IPS_8k_1c', 1200, 3),
+    (1, 'TFTN_1500', 1300, 2),
+    (1, 'BioPixel_2', 12000, 5);
+
+create table scooters(
+ id serial primary key,
+ brand_id int,
+ product_model varchar(40),
+ price int,
+ factory_id int
+);   
+    
+insert into scooters(brand_id, product_model, price, factory_id)
+values (2, 'A-P300', 2000, 2),
+    (2, 'B-A320', 280, 4),
+    (1, 'C-NV1000_Ultra', 650, 1),
+    (3, 'D_P400_super_Amolet', 2400, 2),
+    (1, 'E-AV_1000', 1100, 5),
+    (3, 'F-UKV_100', 2300, 3),
+    (2, 'G-KV-200', 200, 1),
+    (3, 'H-IPS_1980', 530, 4),
+    (1, 'I-IPS_4k', 6300, 2),
+    (2, 'J-IPS_8k_1c', 120, 1),
+    (1, 'K-TFTN_1500', 130, 5),
+    (1, 'O-BioPixel_2', 1200, 3);
+   
+create table orders(
+ id serial primary key,
+ brand_id int,
+ product_model varchar(40),
+ price int,
+ pcs int
+);
+
+insert into orders(brand_id, product_model, price, pcs)
+values (2, 'iphone_13', 1800, 1),
+    (2, 'B-A320', 280, 2),
+    (1, 'IPS_4k', 630, 1);
+
+   create table brands(
+ id serial primary key,
+ brand_title varchar(50)
+);
+
+insert into brands(brand_title)
+values ('Samsung'),
+    ('Apple'),
+    ('Huawei'),
+    ('HP'),
+    ('Koogu');
+--=================================================================
+select cast(brand_id as varchar), price from scooters 
+union all
+select product_model, factory_id from monitors;
+--=================================================================
+create table phones_apple(
+ id serial primary key,
+ model varchar(40),
+ ram int not null,
+ front_camera int,
+ price int
+);
+
+
+insert into phones_apple(model, ram, front_camera, price)
+values ('X', 4, 8, 400),
+    ('11', 6, 10, 700),
+    ('12', 8, 12, 1000),
+    ('7', 4, 12, 400),
+    ('XR', 6, 12, 800),
+    ('XS', 6, 12, 1000),
+    ('13', 6, 12, 1500),
+    ('8', 4, 12, 700),
+    ('SE 2020', 6, 8, 700);
+
+   
+create table phones_samsung(
+ id serial primary key,
+ model varchar(40),
+ ram int not null,
+ front_camera int,
+ price int
+);
+
+insert into phones_samsung(model, ram, front_camera, price)
+values ('A50', 6, 10, 300),
+    ('A50', 8, 10, 400),
+    ('A52', 8, 16, 500),
+    ('S20', 8, 24, 1500),
+    ('S21', 8, 12, 1000),
+    ('S22', 6, 12, 1200),
+    ('A71', 6, 12, 1200),
+    ('A91', 4, 12, 1900),
+    ('A57', 8, 8, 900),
+    ('A32', 8, 4, 800),
+    ('A33', 8, 5, 750),
+    ('A43', 8, 5, 850)
+ ;
+
+create table samsung_orders(
+ id serial primary key,
+ phone_id int
+);
+
+insert into samsung_orders(phone_id)
+values (2),
+    (5),
+    (1),
+    (7),
+    (10);
+--====================================================================
+select * from phones_samsung;
+select * from phones_apple;
+
+select * from phones_apple
+where price < (select avg(price) from phones_samsung);
+   
+select * from phones_apple 
+where price in (select price from phones_samsung where price < 800);
+
+select * from phones_apple 
+where price < all(select price from phones_samsung where price < 1000);
+
+select * from phones_apple 
+where price = all(select price from phones_samsung where price < 1000);
+   
+select * from phones_apple 
+where price != any(select price from phones_samsung where price > 1000);
+
+
+
+
