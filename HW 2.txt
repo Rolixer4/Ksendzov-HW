@@ -50,6 +50,7 @@ XML
  25. Закоммитить файл: git commit -m "add new.xml file"
  26. Отправить файл на внешний GitHub репозиторий: git push
  27. Отредактировать содержание файла “new.xml” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML:
+<?xml version=" 1.0 " encoding="utf-8"?>
 <FullName> Nikita Shevaldin </FullName>
 <Age> 23 </Age>
 <NumberOfPets> 4 </NumberOfPets>
@@ -57,6 +58,7 @@ XML
  28. Отправить изменения на внешний репозиторий: git commit -am "add 4 lines to new.xml"; git push
  29. Создать файл preferences.xml: touch preferences.xml
  30. В файл preferences.xml добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML:
+<?xml version=" 1.0 " encoding="utf-8"?>
 <FavoriteMovie> Limitless </FavoriteMovie>
 <FavoriteSeries> The Witcher </FavoriteSeries>
 <FavoriteFood> Steak Denver </FavoriteFood>
@@ -64,6 +66,7 @@ XML
 <SideToVisit> Dark Side </SideToVisit>
 <CountryToVisit> USA </CountryToVisit>
  31. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML: touch skills.xml
+<?xml version=" 1.0 " encoding="utf-8"?>
 <SkillsToBeLearned>Soft and Hard skills </SkillsToBeLearned>
 <HardSkills> Умение составлять документацию, Умение писать баг репорты, Понимание теории и основы тестирования, Понимание работы тестирования </HardSkills>
  32. Сделать коммит в одну строку: git commit -am "add 2 files to repository"
