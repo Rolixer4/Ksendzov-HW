@@ -1,4 +1,3 @@
--- HW 2 START
 create table salary(
 	id serial primary key,
 	monthly_salary int not null
