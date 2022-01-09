@@ -80,7 +80,7 @@ insert into salary_roles(id_role, id_salary)
 		   (14, 1),
 		   (15, 9);
 		  
---óäàëèòü òàáëèöó drop table salary_roles;
+--drop table salary_roles;
 		  
 
 insert into salary_roles(id_role, id_salary)
