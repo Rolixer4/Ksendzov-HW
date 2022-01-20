@@ -1,5 +1,3 @@
--- HW 3 START		  
-
 -- 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
 select employee_name en, monthly_salary ms from employee_salary
 	join employees on employee_salary.salary_id = employees.id
