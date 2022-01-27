@@ -6,7 +6,8 @@ JSON
  8. Закоммитить файл: git commin -m "add a new.json file"
  9. Отправить файл на внешний GitHub репозиторий: git push
  10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON: 
-{       "Full Name": "Nikita Shevaldin",
+{      
+        "Full Name": "Nikita Shevaldin",
         "Age": 23,
         "Number of pets": 4,
         "Expected salary at the start": 500
