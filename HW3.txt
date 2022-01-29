@@ -7,7 +7,6 @@
 - Charles
 - Mobile testing
 }  git branch "название ветки"
-
 2. Запушить все ветки на внешний репозиторий: git push origin --all
 3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта: git checkout Bug_reports; touch bug_report_strucrure.txt
 Summary Короткое описание проблемы, явно указывающее на причину и тип ошибочной ситуации.
