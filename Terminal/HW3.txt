@@ -34,4 +34,4 @@ Attachment Файл с логами, скриншот или любой друг
 7. В ветке CheckLists набросать структуру чек листа: git checkout CheckLists; touch CheckLists.txt
 8. Запушить структуру на внешний репозиторий: git add .; git commit -m "commit"; git push
 9. На внешнем репозитории сделать Pull Request ветки CheckLists в main: commit Pull Request (сверху будет в какую и из какой ветки мержим); Create Pull Request; Merge Pull Request
-10. Синхронизировать Внешнюю и Локальную ветки Main: git checkout main; git pull
+10. Синхронизировать Внешнюю и Локальную ветки Main: git checkout main; git pull.
